@@ -4,9 +4,26 @@
 ;; Show line numbers
 (global-linum-mode t)
 
-;; Add /usr/local/bin to path for npm tools
-(add-to-list 'exec-path "/usr/local/bin")
-(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+;; Windows
+(if (eq system-type 'windows-nt)
+	(progn
+	  (print "welcome to windows")))
+
+;; Linux, Unix, or Mac
+(unless (eq system-type 'windows-nt)
+  (progn
+	(print "welcome to unix")
+	;; Add /usr/local/bin to path for npm tools
+	(add-to-list 'exec-path "/usr/local/bin")
+	(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+	))
+
+;; Mac OSX
+(if (eq system-type 'darwin)
+	(progn
+	  (print "welcome to mac")
+	  (setq delete-by-moving-to-trash t)
+	  ))
 
 ;; Atom Dark Theme - Sublime mix.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/atom-one-dark-theme/")
@@ -22,20 +39,17 @@
 (transient-mark-mode 1) ;; No region when it is not highlighted
 (setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
 
-;; Mac OSX
-(setq delete-by-moving-to-trash t)
-
 ;; Enable recent files mode
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 12)
 
-;; Easy scrolling; 4-space tabs.
+;; 4-space tabs.
 (custom-set-variables
-;; '(mouse-wheel-progressive-speed nil)
-;; '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
-;; '(scroll-step 1)
  '(tab-width 4))
+
+;; Whatever this does
+(custom-set-faces)
 
 ;; Better scrolling with mouse wheel/trackpad.
 (unless (and (boundp 'mac-mouse-wheel-smooth-scroll) mac-mouse-wheel-smooth-scroll)
@@ -52,9 +66,6 @@
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
-
-;; Whatever this does
-(custom-set-faces)
 
 ;; No beeps. No startup screen. No scratch message.
 (setq ring-bell-function 'ignore)
@@ -116,8 +127,10 @@
 (tabbar-mode)
 
 ;; Autocomplete
+
 ;; Using Company
 (add-hook 'after-init-hook 'global-company-mode)
+
 ;; Using autopair
 (add-to-list 'load-path "~/.emacs.d/vendor/autopair")
 (require 'autopair)
