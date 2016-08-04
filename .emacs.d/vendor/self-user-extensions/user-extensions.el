@@ -13,10 +13,10 @@
 
 ;; Ctrl+Tab adds four spaces.
 (defun ue-add-single-indent ()
-  (global-set-key (kbd "C-<tab>")
-				  (lambda ()
-				    (interactive)
-					(insert "    "))))
+    (global-set-key (kbd "C-<tab>")
+    (lambda ()
+        (interactive)
+	    (insert "    "))))
 
 ;; Double-home goes to first non-whitespace character.
 (defun ue-add-double-home ())
@@ -30,7 +30,7 @@
 (defun ue-run-default ()
 ;;  (ue-ctrl-z-undo)
 ;;  (ue-add-backtab-macro)
-;;  (ue-add-single-indent)
+  (ue-add-single-indent)
 ;;  (ue-add-double-home)
   (ue-add-control-comment))
 

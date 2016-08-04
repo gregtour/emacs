@@ -4,6 +4,12 @@
 ;; Show line numbers
 (global-linum-mode t)
 
+;; Prevent new-line tabination
+(electric-indent-mode 0)
+
+;; Indent newline to existing tab
+(global-set-key (kbd "RET") 'newline-and-indent)
+
 ;; Windows
 (if (eq system-type 'windows-nt)
 	(progn
