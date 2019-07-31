@@ -1,0 +1,256 @@
+{
+	"name": "Adept",
+	"author": "xigency",
+	"variables": {
+		"rgb_start": "hsl(0, 100%, 90%)",
+		"rgb_end": "hsl(359, 100%, 90%)",
+
+		"bgr_start": "hsl(64, 85%, 61%)",
+		"bgr_mid": "hsl(84, 72%, 56%)",
+		"bgr_end": "hsl(136, 56%, 46%)",
+
+		//"bgr_03": "#A0E040",
+		//"bgr_04": "#E6F045",
+		//"bgr_05": "#34B656",
+
+		"red": "#FF0000",
+		"nuclear": "#FF400F",
+		"pink": "#F92672",
+		"purple": "#AA00FF",
+		"mauve": "#AE81FF",
+		"semimauve": "#AE81FFA0",
+		"lightblue": "#66D9EF",
+		"seafoam": "#00FF99",
+		"lime": "#A6E22E",
+		"orange": "#FD971F",
+		"tan": "#E6DB74",
+		"gray": "#75715E",
+		"white": "#FFF"
+	},
+	"globals": {
+	    "background": "#111111",
+	    "foreground": "#F8F8F2",
+	    "invisibles": "#3B3A32",
+	    "caret": "#F8F8F0",
+	    "line_highlight": "#3E3D32",
+
+	    "selection": "#49483E",
+	    "selection_border": "#222218",
+
+	    "find_highlight": "#FFE792",
+	    "find_highlight_foreground": "#000000",
+
+	    "active_guide": "#9D550FB0",
+
+	    "bracket_contents_foreground": "#F8F8F2A5",
+	    "bracket_contents_options": "underline",
+	    "brackets_foreground": "#F8F8F2A5",
+	    "brackets_options": "underline",
+
+	    "tags_options": "stippled_underline"
+	},
+	"rules": [
+		{
+			"scope": "entity, variable, source - punctuation",
+			"foreground": ["var(rgb_start)",  "var(rgb_end)"]
+		},
+
+		{
+			"scope": "entity.other.attribute-name, entity.name.module.js, variable.import.parameter.js, variable.other.class.js, entity.name.accessor.js, entity.name.method.js, entity.name.function, entity.name.class.js, entity.other.attribute-name.id, entity.other.inherited-class",
+			"foreground": ["var(bgr_start)", "var(bgr_mid)", "var(bgr_end)"]
+		},
+
+	    {
+	        "scope": "support.function, support",
+	        "foreground": "var(lime)"
+	    },
+	    {
+	        "scope": "meta.prototype support.class",
+	        "foreground": "var(lime)"
+	    },
+/*
+	    {
+	        "scope": "entity.other.attribute-name",
+	        "foreground": "var(lime)"
+	    },
+	    {
+	        "scope": "entity.name.module.js, variable.import.parameter.js, variable.other.class.js",
+	        "foreground": "var(lime)"
+	    },
+	    {
+	        "scope": "entity.name.accessor.js",
+	        "foreground": "var(lime)"
+	    },
+	    {
+	        "scope": "entity.name.method.js",
+	        "foreground": "var(lime)"
+	    },
+	    {
+	        "scope": "entity.name.function",
+	        "foreground": "var(lime)"
+	    },
+	    {
+	        "scope": "entity.name.class.js",
+	        "foreground": "var(lime)",
+	        "font_style": "italic"
+	    },
+	    {
+	        "scope": "entity.other.attribute-name.id",
+	        "foreground": "var(lime)"
+	    },
+	    {
+	        "scope": "entity.other.inherited-class",
+	        "foreground": "var(lime)",
+	        "font_style": "italic underline"
+	    },
+*/
+	    {
+	        "scope": "comment",
+	        "foreground": "var(gray)",
+	        "font_style": "italic"
+	    },
+	    {
+	        "scope": "string",
+	        "foreground": "var(tan)"
+	    },
+	    {
+	        "scope": "constant.language",
+	        "foreground": "var(mauve)"
+	    },
+	    {
+	        "scope": "constant.character, constant.other",
+	        "foreground": "var(mauve)"
+	    },
+	    {
+	        "scope": "invalid",
+	        "background": "var(pink)"
+	    },
+	    {
+	        "scope": "constant",
+	        "foreground": "var(semimauve)"
+	    },
+	    {
+	        "scope": "keyword",
+	        "foreground": "var(pink)"
+	    },
+	    {
+	        "scope": "constant.numeric",
+	        "foreground": "var(mauve)"
+	    },
+	    {
+	        "scope": "storage",
+	        "foreground": "var(pink)"
+	    },
+	    {
+	        "scope": "storage.type",
+	        "foreground": "var(lightblue)"
+	    },
+/*	    {
+	        "scope": "support",
+	        "foreground": "#8A5C8DFF"
+	    }, */
+	    {
+	        "scope": "meta.function.argument, variable.parameter, meta.parens.c",
+	        "foreground": "var(orange)"
+	    },
+	    {
+	        "scope": "invalid.illegal",
+	        "foreground": "#FD5FF1FF",
+	        "background": "#562D56BF"
+	    },
+
+	    {
+	        "scope": "entity.name.tag",
+	        "foreground": "var(pink)"
+	    },
+
+	    {
+	        "scope": "entity.arrow.function.js",
+	        "foreground": "var(purple)"
+	    },
+	    {
+	        "scope": "support.class.error.js",
+	        "foreground": "#FF5522"
+	    },
+	    {
+	        "scope": "support.class.node.js",
+	        "foreground": "#1224FE"
+	    },
+	    {
+	        "scope": "support.keyword.node.js",
+	        "foreground": "var(pink)",
+	        "font_style": "bold"
+	    },
+	    {
+	        "scope": "meta.method.js",
+	        "foreground": "var(white)"
+	    },
+	    {
+	        "scope": "support.function",
+	        "foreground": "var(lightblue)"
+	    },
+	    {
+	        "scope": "entity.name.extends.js",
+	        "foreground": "var(seafoam)",
+	        "font_style": "italic"
+	    },
+	    {
+	        "scope": "support.constant",
+	        "foreground": "var(lightblue)"
+	    },
+	    {
+	        "scope": "support.type, support.class, variable.language",
+	        "foreground": "var(lightblue)",
+	        "font_style": "italic"
+	    },
+	    {
+	        "scope": "constant.language.undefined.js",
+	        "foreground": "var(mauve)"
+	    },
+	    {
+	        "scope": "constant.language.boolean.false",
+	        "foreground": "var(mauve)"
+	    },
+	    {
+	        "scope": "constant.language.boolean.true",
+	        "foreground": "var(mauve)"
+	    },
+	    {
+	        "scope": "constant.language.null.js",
+	        "foreground": "var(mauve)"
+	    },
+	    {
+	        "scope": "meta.diff, meta.diff.header, entity.name.namespace",
+	        "foreground": "var(gray)"
+	    },
+	    {
+	        "scope": "markup.deleted",
+	        "foreground": "var(pink)",
+	        "background": "#420E09FF"
+	    },
+	    {
+	        "scope": "markup.changed",
+	        "foreground": "var(tan)",
+	        "background": "#4A410DFF"
+	    },
+	    {
+	        "scope": "markup.inserted",
+	        "foreground": "#F8F8F8FF",
+	        "background": "#253B22FF"
+	    },
+	    {
+	        "scope": "meta.line.entry.logfile, meta.line.exit.logfile",
+	        "foreground": "#F8F8F8FF",
+	        "background": "#EEEEEE29"
+	    },
+	    {
+	        "scope": "meta.line.error.logfile",
+	        "foreground": "#F8F8F8",
+	        "background": "#751012"
+	    },
+	    {
+	        "scope": "meta.structure.dictionary.json string.quoted.double",
+	        "foreground": "#CFCFC2"
+	    }
+	]
+}
